@@ -1,0 +1,25 @@
+def strScore(s,n):  
+    score = 0
+    index = 0
+    for i in range(n):  
+            for j in range(len(s)): 
+                score += (ord(s[j]) - 
+                          ord('a') + 1) 
+            index = i + 1
+            break
+    score = score * index 
+    return score 
+    
+n=int(input())
+s=input()
+m=0
+p=strScore(s,n)
+if(p==n):
+    print("0")
+else:
+    count=0
+    for i in s:
+        count+=ord(i)-96
+        
+    c=abs(count-n)//26
+    print(c+1)
