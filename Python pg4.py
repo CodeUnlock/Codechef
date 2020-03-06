@@ -1,0 +1,11 @@
+count=0
+t=True
+while(t==True):
+    s=int(input())
+    if(s%2==0):
+        if(count<4):
+            count+=1
+            print(count)
+        else:
+            print(count+1)
+            t=False
