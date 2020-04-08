@@ -1,0 +1,84 @@
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int t,f;
+    cin>>t;
+    while(t--)
+    {
+        int x,k,i,f1=0,temp1=0,f=0,start=0,ans=0;
+        cin>>x;
+        cin>>k;
+        if(x==k)
+        {
+            cout<<0<<"\n";
+        }
+        if(x<k)
+        {
+            cout<<0<<"\n";
+        }
+        if(k==2)
+        {
+            for( i=2;i<=(sqrt)(x);i++)
+            {
+                if(x%i==0)
+                {
+                    f=1;
+                }
+            }
+            if(f==0)
+            {
+                cout<<0<<"\n";
+            }
+            else{
+                cout<<1<<endl;
+            }
+        }
+        if(k==1)
+        {
+            cout<<1<<endl;
+        }
+        if(k>2)
+        {
+            start=pow(2,k);
+            temp1=x/2;
+              for( i=2;i<=(sqrt)(temp1);i++)
+            {
+                if(temp1%i==0)
+                {
+                    f1=1;
+                    break;
+                }
+            }
+            if(f1==0)
+            {
+                cout<<0<<"\n";
+            }
+           else
+           {
+          // cout<<start<<endl;
+            for( i=start;i<10000;i=i+2)
+            {
+               // cout<<i<<endl;
+                //cout<<x<<endl;
+                if(x==i)
+                {
+                    ans=1;
+                  break;
+                }
+            }
+        if(ans==1)
+        {
+            cout<<1<<endl;
+        }
+         else
+                {
+                    cout<<0<<endl;
+                    break;
+                }
+        }}
+    }
+    }
+
+
