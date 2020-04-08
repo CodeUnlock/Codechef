@@ -1,0 +1,66 @@
+//Sample
+#include<iostream>
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+	{
+		 int t,n,pos=0,k=0,ans=0,counter=0,c=0,freq=0;
+		 cin>>t;
+		 while(t--)
+		 {
+			 k=0;counter=0;ans=0,freq=0;
+			 cin>>n;
+			 int arr[n];int temp1[n];
+			 for(int i=0;i<n;i++)
+			 {
+				 cin>>arr[i];
+				 if(arr[i]==1)
+                 {
+                     freq++;
+                 }
+			 }
+			 if(freq==1)
+             {
+                 cout<<"YES"<<"\n";
+             }
+             else if((n<=6)&&(freq>1))
+             {
+                 cout<<"NO"<<"\n";
+             }
+            else
+            {
+			 for(int i=0;i<n;i++)
+			 {
+				 if(arr[i]==1)
+				 {
+					 temp1[k]=i;
+					 k++;
+					 counter++;
+				 }
+			 }
+			 c=counter-1;
+			 for(int i=0;i<k;i++)
+			 {
+				 ans=temp1[i+1]-temp1[i];
+				 c--;
+				 if(ans<6)
+				 {
+					 cout<<"NO"<<"\n";
+					 break;
+				 }
+				 if(c==0)
+				 {
+					 if(ans>=6)
+					 {
+						 cout<<"YES"<<"\n";
+						 break;
+					 }
+				 }
+				 if(c!=0)
+				 {
+					 ans=0;
+				 }
+			 }
+		 }
+	}
+		 }
